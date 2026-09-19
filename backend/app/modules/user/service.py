@@ -25,7 +25,7 @@ class UserService:
             email=data.email,
             name=data.name,
             role=data.role,
-            hashed_password=hash_password(data.password),
+            hashed_password=await hash_password(data.password),
         )
         await self._repository.add(user)
         await self._session.commit()
