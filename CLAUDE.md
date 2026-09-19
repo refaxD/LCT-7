@@ -27,4 +27,5 @@ make down           # stop, remove orphans
 make logs           # follow logs
 make pretty         # backend: ruff format + ruff check --fix
 make check          # backend: ruff check + ruff format --check (CI/pre-commit)
+make test           # backend: pytest (sqlite by default; TEST_DATABASE_URL to use postgres)
 ```

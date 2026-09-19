@@ -38,4 +38,9 @@ pretty:
 check:
 	cd backend && uv run ruff check . && uv run ruff format --check .
 
-.PHONY: dev up deploy down logs pretty check
+# Тесты бэкенда. По умолчанию sqlite — поднятая БД не нужна.
+# Прогон на настоящем диалекте: TEST_DATABASE_URL=postgresql+asyncpg://... make test
+test:
+	cd backend && uv run pytest
+
+.PHONY: dev up deploy down logs pretty check test

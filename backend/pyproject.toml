@@ -19,6 +19,10 @@ dependencies = [
 dev = [
     "ruff>=0.7",
     "mypy>=1.13",
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.28",
+    "aiosqlite>=0.20",
 ]
 
 # Это приложение, а не библиотека — uv ставит только зависимости в окружение,
@@ -26,6 +30,13 @@ dev = [
 # не публикует артефакт). Исходники доступны через PYTHONPATH.
 [tool.uv]
 package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+# Тесты по умолчанию идут на sqlite, чтобы не требовать поднятой БД.
+# Прогон на настоящем диалекте: TEST_DATABASE_URL=postgresql+asyncpg://...
 
 [tool.ruff]
 line-length = 100

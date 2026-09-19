@@ -42,10 +42,10 @@ class DatabaseProvider(Provider):
             yield session
 
 
-def create_container() -> AsyncContainer:
+def create_container(database: Provider | None = None) -> AsyncContainer:
     return make_async_container(
         AppProvider(),
-        DatabaseProvider(),
+        database or DatabaseProvider(),
         SiteProvider(),
         ScheduleProvider(),
         StageStatusProvider(),
