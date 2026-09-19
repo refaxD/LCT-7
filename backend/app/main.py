@@ -3,6 +3,7 @@ from contextlib import asynccontextmanager
 from dishka.integrations.fastapi import setup_dishka
 from fastapi import FastAPI
 
+from app.core.logging import configure_logging
 from app.core.settings import get_settings
 from app.plugins.di import create_container
 from app.plugins.exceptions import register_exception_handlers
@@ -20,6 +21,8 @@ async def lifespan(app: FastAPI):
 
 
 def create_app() -> FastAPI:
+    configure_logging(settings.log_level)
+
     app = FastAPI(
         title="LCT-7 API",
         docs_url=f"{settings.api_prefix}/docs",
