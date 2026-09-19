@@ -14,9 +14,10 @@ ENV UV_COMPILE_BYTECODE=1 \
 
 WORKDIR /app
 
-# Слой зависимостей кешируется отдельно от исходников
-COPY pyproject.toml ./
-RUN uv sync --no-dev
+# Слой зависимостей кешируется отдельно от исходников.
+# --frozen: ставим ровно то, что в локе, и падаем, если лок разошёлся с pyproject
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev
 
 COPY . .
 
