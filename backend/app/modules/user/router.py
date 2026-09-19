@@ -1,5 +1,3 @@
-"""HTTP-роуты пользователя (аналог UserRoutes.kt)."""
-
 from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter
 

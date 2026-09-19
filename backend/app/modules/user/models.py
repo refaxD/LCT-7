@@ -1,5 +1,3 @@
-"""ORM-модели пользователя (аналог UserModels.kt)."""
-
 import uuid
 from datetime import datetime
 

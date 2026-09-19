@@ -1,5 +1,3 @@
-"""Хеширование паролей (аналог core/Password.kt)."""
-
 import bcrypt
 
 

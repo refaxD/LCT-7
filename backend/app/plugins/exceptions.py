@@ -1,12 +1,8 @@
-"""Единая обработка ошибок (аналог plugins/StatusPages.kt)."""
-
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 
 class AppError(Exception):
-    """Доменная ошибка с HTTP-кодом. Бросается сервисами, ловится хендлером ниже."""
-
     def __init__(self, message: str, status_code: int = 400) -> None:
         self.message = message
         self.status_code = status_code

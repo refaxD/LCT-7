@@ -1,8 +1,4 @@
-"""Конфигурация приложения (аналог core/Settings.kt).
-
-Переменные читаются из окружения / .env. Вложенные секции задаются через
-двойное подчёркивание, как в Kotlin-бэкенде: POSTGRES__HOST, POSTGRES__PORT и т.д.
-"""
+"""Вложенные секции читаются через двойное подчёркивание: POSTGRES__HOST, POSTGRES__PORT."""
 
 from functools import lru_cache
 

@@ -1,5 +1,3 @@
-"""Служебные роуты: healthcheck (аналог utility/Routes.kt)."""
-
 from fastapi import APIRouter
 
 from app.modules.utility.schemas import HealthResponse

@@ -1,5 +1,3 @@
-"""Pydantic-схемы пользователя (аналог UserSchemas.kt)."""
-
 import uuid
 from datetime import datetime
 

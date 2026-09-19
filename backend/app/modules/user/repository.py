@@ -1,9 +1,3 @@
-"""Доступ к данным пользователя (аналог UserRepository.kt).
-
-Наследуется от BaseRepository — базовые запросы (list/get/get_by/add/delete)
-приходят оттуда, здесь остаётся только специфика домена.
-"""
-
 from collections.abc import Sequence
 
 from sqlalchemy import select

@@ -1,9 +1,3 @@
-"""DI-контейнер Dishka (аналог plugins/Koin.kt).
-
-Инфраструктурные провайдеры (settings, engine, session) живут здесь, доменные —
-каждый в своём модуле (app/modules/<домен>/provider.py), как Module.kt в Kotlin.
-"""
-
 from collections.abc import AsyncIterable
 
 from dishka import AsyncContainer, Provider, Scope, make_async_container, provide

@@ -1,5 +1,3 @@
-"""Бизнес-логика пользователя (аналог UserService.kt)."""
-
 from collections.abc import Sequence
 
 from sqlalchemy.ext.asyncio import AsyncSession

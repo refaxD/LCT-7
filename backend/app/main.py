@@ -1,9 +1,3 @@
-"""Точка входа FastAPI (аналог Application.kt).
-
-Запуск в проде/деве через Granian:
-    granian --interface asgi app.main:app --host 0.0.0.0 --port 8000
-"""
-
 from contextlib import asynccontextmanager
 
 from dishka.integrations.fastapi import setup_dishka

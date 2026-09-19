@@ -1,9 +1,4 @@
-"""Базовый репозиторий с типовыми запросами (аналог core/BaseRepository.kt).
-
-Доменные репозитории наследуются от него и добавляют только специфичные для
-своей модели запросы. Session по-прежнему приходит через DI (Scope.REQUEST);
-commit — ответственность сервиса, репозиторий только стейджит изменения.
-"""
+"""Репозиторий только стейджит изменения: commit — ответственность сервиса."""
 
 from collections.abc import Sequence
 from typing import Any
@@ -15,13 +10,6 @@ from app.core.database import Base
 
 
 class BaseRepository[ModelT: Base]:
-    """CRUD по одной модели. Наследники задают `model` и дописывают свои методы.
-
-    Пример:
-        class UserRepository(BaseRepository[User]):
-            model = User
-    """
-
     model: type[ModelT]
 
     def __init__(self, session: AsyncSession) -> None:
